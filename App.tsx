@@ -63,6 +63,8 @@ function App(): JSX.Element {
       scanDeviceListener.remove();
       deviceConnectedListener.remove();
       deviceConnectFailedListener.remove();
+      bloodMonitorNotifyListener.remove();
+      thermometerNotifyListener.remove();
       smartPulseNotifyListener.remove();
       scaleNotifyListener.remove();
     };
