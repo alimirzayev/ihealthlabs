@@ -38,13 +38,23 @@ function App(): JSX.Element {
       console.log('Device Connection Failed: ' + JSON.stringify(e));
     });
 
-    //* Listener for Blood Monitor notifications 
+    //! Listener for Blood Monitor notifications 
     const bloodMonitorNotifyListener = DeviceEventEmitter.addListener(BP7Module.Event_Notify, (e) => {
       console.log('Blood Thermometer Device Notification: ' + JSON.stringify(e));
     });
 
-    //* Listener for Thermometer notifications 
+    //! Listener for Thermometer notifications 
     const thermometerNotifyListener = DeviceEventEmitter.addListener(PT3SBTModule.Event_Notify, (e) => {
+      console.log('Thermometer Device Notification: ' + JSON.stringify(e));
+    });
+
+     //! Listener for Pulse Oximeter notifications 
+     const smartPulseNotifyListener = DeviceEventEmitter.addListener(PO3Module.Event_Notify, (e) => {
+      console.log('Thermometer Device Notification: ' + JSON.stringify(e));
+    });
+
+     //! Listener for Scale notifications 
+     const scaleNotifyListener = DeviceEventEmitter.addListener(HS2Module.Event_Notify, (e) => {
       console.log('Thermometer Device Notification: ' + JSON.stringify(e));
     });
 
@@ -53,8 +63,8 @@ function App(): JSX.Element {
       scanDeviceListener.remove();
       deviceConnectedListener.remove();
       deviceConnectFailedListener.remove();
-      bloodMonitorNotifyListener.remove();
-      thermometerNotifyListener.remove();
+      smartPulseNotifyListener.remove();
+      scaleNotifyListener.remove();
     };
   });
     
