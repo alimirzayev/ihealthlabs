@@ -50,12 +50,12 @@ function App(): JSX.Element {
 
      //! Listener for Pulse Oximeter notifications 
      const smartPulseNotifyListener = DeviceEventEmitter.addListener(PO3Module.Event_Notify, (e) => {
-      console.log('Thermometer Device Notification: ' + JSON.stringify(e));
+      console.log('Pulse Oximeter Device Notification: ' + JSON.stringify(e));
     });
 
      //! Listener for Scale notifications 
      const scaleNotifyListener = DeviceEventEmitter.addListener(HS2Module.Event_Notify, (e) => {
-      console.log('Thermometer Device Notification: ' + JSON.stringify(e));
+      console.log('Scale Device Notification: ' + JSON.stringify(e));
     });
 
     //* Clean up listeners when the component unmounts
